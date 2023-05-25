@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="survey.css">
+    <title>Good Vibes form</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Good Vibes form</h1>
+        <p>Пожалуйста, заполните эту форму опроса, чтобы помочь нам улучшить наши услуги.</p>
+        <form action="submit.html" method="POST">
+            <ul>
+                <li>
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </li>
+                <li>
+                    <label for="age">Возраст:</label>
+                    <input type="number" id="age" name="age" required>    
+                </li>
+                <li>
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" required>
+                </li>
+                <li>
+                    <label for="gender">Пол:</label>
+                    <span><input type="radio" id="male" name="gender" value="Мужской" class="radiolabel"><label for="male" class="radiolabel">Мужской</label></span>
+                    <span><input type="radio" id="female" name="gender" value="Женский" class="radiolabel"><label for="female" class="radiolabel">Женский</label></span>         
+                </li>
+                <li>
+                    <label for="location">Место проживания:</label>
+                    <select id="location" name="location">
+                        <option value="moscow">Москва</option>
+                        <option value="spb">СПб.</option>
+                        <option value="other">Другое</option>
+                    </select>                    
+                </li>
+                <li>
+                    <label for="agree">Согласие на обработку данных:</label>
+                    <input type="checkbox" id="agree" name="agree" class="agree" required>
+                </li>    
+                <li>
+                    <label for="feedback">Отзыв:</label>
+                    <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>     
+                </li>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>    
+
