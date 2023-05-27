@@ -1,0 +1,87 @@
+$background-color: #f5f5f5;
+$form-background-color: white;
+$input-background-color: #ccc;
+$button-background-color: #009578;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $background-color;
+}
+
+@mixin set-border($border, $border-radius) {
+    border: $border;
+    border-radius: $border-radius;
+
+}
+
+.container {
+    @include set-border(none, 8px);
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: $form-background-color;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+form {
+    ul, li {
+        list-style-type: none;
+        margin-bottom: 10px;    
+    }
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 35%;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+input,
+select,
+textarea {
+    @include set-border(1px solid $input-background-color, 4px);
+
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.reset-width {
+    width: auto;
+}
+
+.agree {
+    @extend .reset-width;
+    vertical-align: sub;
+}
+
+.radiolabel {
+    @extend .reset-width;
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+button {
+    @include set-border(none, 4px);
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: $button-background-color;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
