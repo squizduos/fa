@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="task3.css">
+
+    <title>Hello, world!</title>
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Меню</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Главная страница</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Мои достижения</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Мои недостатки
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Про которые известно всем</a></li>
+                  <li><a class="dropdown-item" href="#">Про которые известно только мне</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Про которые известно всем, кроме меня</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Поднять самооценку</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>    
+    </div>
+    
+  </head>
+  <body>
+    <main>
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="Sunset Over the City"> 
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Детальное описание взаимодействия со человеком.</h1>
+                <p>Опиши себя и дай другим возможность оценить тебя!</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Начни сегодня</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item active">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Найди себе партнера по недостаткам.</h1>
+                <p>У вас один недостаток? Возможно, это матч!</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Узнать больше</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="Sunset Over the City">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Сформируй свои ожидания от человека.</h1>
+                <p>Все подводные камни - на одной странице!</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Найти человека</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div id="myButtons" class="d-flex gap-2 justify-content-center py-5">
+        <button class="btn btn-primary rounded-pill px-3" type="button">Высокий рост</button>
+        <button class="btn btn-secondary rounded-pill px-3" type="button">Плотное телосложение</button>
+        <button class="btn btn-success rounded-pill px-3" type="button">Доброта к животным</button>
+        <button class="btn btn-danger rounded-pill px-3" type="button">Агрессивность</button>
+        <button class="btn btn-warning rounded-pill px-3" type="button">Авторитарность</button>
+        <button class="btn btn-info rounded-pill px-3" type="button">Интроверсия</button>
+        <button class="btn btn-light rounded-pill px-3" type="button">Анорексия</button>
+        <button class="btn btn-dark rounded-pill px-3" type="button">Булимия</button>
+      </div>
+      
+      <div id="myCards" class="container py-3">
+        <div id="myCards" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Для всех</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">Бесплатно</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Детальное описание собственной личности</li>
+                  <li>10 поисков в месяц по другим людям</li>
+                  <li>Публикация фотографий</li>
+                  <li>Волонтерская поддержка</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Регистрация</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Для поиска людей</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">2900 руб.<small class="text-body-secondary fw-light"> в месяц</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Все возможности бесплатного пакета</li>
+                  <li>1000 плисков в месяц по другим людям</li>
+                  <li>Уведомления об изменении в анкетах</li>
+                  <li>3 консультации в месяц с психологом</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Регистрация и оплата</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Для профессионалов</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">69000 руб.<small class="text-body-secondary fw-light"> в месяц</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Безлимитный поиск по другим людям</li>
+                  <li>Фильтрация по ключевым характеристикам</li>
+                  <li>Инструменты анализа и оценки личности</li>
+                  <li>Безлимитные консультации психолога</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Регистрация и оплата</button>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+      <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Новая жизнь.</h1>
+                <p>Исправь свои недостатки и расскажи об этом всем!</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Зарегистрироваться</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Ты не один.</h1>
+                <p>Волонтеры и профессиональные психологи всегда помогут разобраться в проблеме.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Регистрация и оплата</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Честность - залог успеха.</h1>
+                <p>Признай проблему - и решить её станет в два раза легче.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Поиск по недостаткам</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div id="myForm" class="container py-5">
+        <div class="row">
+          <div class="col-md-2 col-lg-2"></div> 
+
+              <div class="col-md-8 col-lg-8">
+                  <h4 class="mb-3">Регистрация</h4>
+                  <form class="needs-validation" novalidate="">
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                        <div class="invalid-feedback">
+                          Введите имя.
+                        </div>
+                      </div>
+          
+                      <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Фамилия</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                        <div class="invalid-feedback">
+                          Введите фамилию.
+                        </div>
+                      </div>
+          
+                      <div class="col-12">
+                        <label for="username" class="form-label">Ник</label>
+                        <div class="input-group has-validation">
+                          <span class="input-group-text">@</span>
+                          <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                        <div class="invalid-feedback">
+                            Введите ник.
+                          </div>
+                        </div>
+                      </div>
+          
+                      <div class="col-12">
+                        <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        <div class="invalid-feedback">
+                          Введите e-mail адрес.
+                        </div>
+                      </div>
+          
+                      <div class="col-12">
+                        <label for="address" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="address" placeholder="" required="">
+                        <div class="invalid-feedback">
+                          Введите пароль.
+                        </div>
+                      </div>
+          
+                    </div>
+          
+                    <hr class="my-4">
+          
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="same-address" required>
+                      <label class="form-check-label" for="same-address">Я согласен с условиями <a href="#">пользовательского соглашения</a></label>
+                    </div>
+          
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="save-info">
+                      <label class="form-check-label" for="save-info">Я согласен получать рекламные сообщения и рассылки</label>
+                    </div>
+
+                    <hr class="my-4">
+          
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Зарегистрироваться</button>
+                  </form>
+                </div>
+                <div class="col-md-2 col-lg-2"></div> 
+
+            </div>  
+        </div>
+      </div>
+
+    </main>
+
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.7.0.min.js" ></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="task3.jss"></script>
+  </body>
+</html>
