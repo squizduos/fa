@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <script>
+        var iAmDrunk = false;
+        var answer = "";
+        while (!iAmDrunk) {
+            answer = prompt("Ну что, еще по одной?");
+            if (answer === "1") {
+                iAmDrunk = true;
+            }
+        }
+        document.writeln(`
+            <div>
+                <p>Сэр, вам достаточно.</p>
+            </div>
+        `);
+    </script>
+</body>
+
+</html>

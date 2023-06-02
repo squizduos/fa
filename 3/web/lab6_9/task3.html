@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+
+    const minute = parseInt(prompt('Введите текущую минуту', 30));
+
+    switch (true) {
+            case (minute >= 0 && minute <= 14):
+                alert('Первая четверть часа');
+                break;
+            case (15 <= minute <= 29):
+                alert('Вторая четверть часа');
+                break;
+            case (30 <= minute <= 44):
+                alert('Третья четверть часа');
+                break;
+            case (45 <= minute <= 59):
+                alert('Четвертая четверть часа');
+                break;
+            default:
+                alert('Вы что ввели?!');
+                break;
+        }
+          
+    </script>
+</body>
+
+</html>

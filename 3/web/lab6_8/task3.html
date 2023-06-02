@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+
+    const persons = [
+        { name: 'Peter', age: 16, admin: false},
+        { name: 'Mark', age: 18, admin: false},
+        { name: 'John', age: 27, admin: true},
+        { name: 'Jane', age: 14, admin: false},
+        { name: 'Tony', age: 24, admin: true},
+    ];
+
+    const adminsNames = persons.filter(person => person.admin == true).map(item => item.name);
+    
+
+    document.writeln(`
+        <div>
+            <p>Администраторы</p>
+            <p>${adminsNames}</p>
+        </div>
+    `);        
+    </script>
+</body>
+
+</html>

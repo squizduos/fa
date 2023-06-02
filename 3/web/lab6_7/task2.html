@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        let testCondition1 = (data) => {
+            if (data === "" || isNaN(data)) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        let testCondition2 = (data) => {
+            if (!isNaN(data)) {
+                dataNum = parseInt(data);
+                if (dataNum % 2 == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        };
+
+        document.writeln(testCondition1(""));
+        document.writeln(testCondition1("5"));
+        document.writeln(testCondition2(8));
+        document.writeln(testCondition2("7"));
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+
+        class User {
+            constructor(name) {
+                this.name = name;
+            }
+
+            sayHi() {
+                alert(this.name);
+            }
+
+            revert() {
+                var nameArr = this.name.split(""); 
+                for (let i = 0; i < nameArr.length / 2; i++) {
+                    let letter = nameArr[i];
+                    nameArr[i] = nameArr[nameArr.length - i - 1];
+                    nameArr[nameArr.length - i - 1] = letter;
+                }
+                this.name = nameArr.join("");
+            }
+        }
+        
+        let user = new User("Семён");
+        user.sayHi();
+        user.revert();
+        user.sayHi();
+    </script>
+</body>
+
+</html>

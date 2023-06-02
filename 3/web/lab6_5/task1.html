@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>
+        <span>Ваши карты: </span>
+        <span id="yourDeck"></p>
+    </p>
+    <p>
+        <span>Ваша сумма: </span>
+        <span id="yourSum"></p>
+    </p>
+    <p>
+        <span>Карты дилера: </span>
+        <span id="dealerDeck"></p>
+    </p>
+    <p>
+        <span>Сумма дилера: </span>
+        <span id="dealerSum"></p>
+    </p>
+
+    <p>
+        <span><button onclick="getNextCard()">Взять еще карту</button></span>
+        <span><button onclick="finishGame()">Завершить игру</button></span>
+    </p>
+
+    <p>
+        <span>Результат игры: </span>
+        <span id="result"></p>
+    </p>
+
+    <hr>
+
+    <p id="debug">Карты в стопке: </p>
+    
+    <script>
+        function shuffle(deck) {
+            let currentIndex = deck.length;
+            let temporaryValue, randomIndex;
+
+            while (0 !== currentIndex) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                temporaryValue = deck[currentIndex];
+                deck[currentIndex] = deck[randomIndex];
+                deck[randomIndex] = temporaryValue;
+            }
+
+            return deck;
+        }
+
+        function countDeck(someDeck) {
+            let sum = 0;
+            for (let i = 0; i < someDeck.length; i++) {
+                if (someDeck[i][0] == "A") {
+                    sum += 11;
+                }
+                else if (someDeck[i][0] == "J" || (someDeck[i][0] == "Q") || (someDeck[i][0] == "K")) {
+                    sum += 10;
+                }
+                else {
+                    sum += parseInt(someDeck[i][0]);
+                }
+                console.log(sum);
+            }
+            if (sum > 21) {
+                for (let i = 0; i < someDeck.length; i++) {
+                    if (someDeck[i][0] == "A") {
+                        sum -= 10;
+                    }
+                }
+            }
+            console.log("\n");
+            return sum;
+        }
+
+        function printDeck(someDeck) {
+            let deckStr = "";
+            for (let i = 0; i < someDeck.length; i++) {
+                deckStr += `${someDeck[i][1]} ${someDeck[i][0]} `;
+            }
+            return deckStr;
+        }
+
+        let deck = [];
+        let suits = ['♥', '♦', '♣', '♠'];
+        let values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        for (let i = 0; i < suits.length; i++) {
+            for (let j = 0; j < values.length; j++) {
+                let card = [values[j], suits[i]];
+                deck.push(card);
+            }
+        }
+        deck = shuffle(deck);
+
+
+        let yourDeck = [];
+        let dealerDeck = [];
+
+        for (let i = 0; i < 2; i++) {
+            let card = deck.pop();
+            yourDeck.push(card);
+            card = deck.pop();
+            dealerDeck.push(card);
+        }
+
+        function refreshStats() {
+            document.getElementById("yourDeck").innerHTML = printDeck(yourDeck);
+            document.getElementById("yourSum").innerHTML = countDeck(yourDeck);
+
+            document.getElementById("dealerDeck").innerHTML = printDeck(dealerDeck);
+            document.getElementById("dealerSum").innerHTML = countDeck(dealerDeck);
+
+            document.getElementById("debug").innerHTML = printDeck(deck);
+        }
+
+        function finishGame() {
+            while (countDeck(dealerDeck) < 17) {
+                let card = deck.pop();
+                dealerDeck.push(card);
+            }
+            refreshStats();
+            checkResults();
+        }
+
+        function checkResults() {
+            if (countDeck(yourDeck) > 21 || countDeck(dealerDeck) == 21 || (countDeck(yourDeck) < countDeck(dealerDeck) && countDeck(dealerDeck) < 21)) {
+                document.getElementById("result").innerHTML += "Вы проиграли";
+            } else {
+                document.getElementById("result").innerHTML += "Вы выиграли";
+            }
+        }
+
+
+        function getNextCard() {
+            let card = deck.pop();
+            yourDeck.push(card);
+            // card = deck.pop();
+            // dealerDeck.push(card);
+
+            if (countDeck(yourDeck) > 21 || countDeck(dealerDeck) >= 21) {
+                checkResults();
+            }
+
+            refreshStats();
+
+        }
+
+        refreshStats();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="emailFilter" onkeyup="filterEmails()" placeholder="Введите название почты для фильтрации...">
+        <ul id="emailList">
+    </ul>
+
+    <script>
+        let emails = ['squizduos@gmail.com', 'barbaleska@yandex.ru', 'me@sqds.ru', 'sqds@gdrive.top', 'sqds@cock.li']; 
+        
+        let emailList = document.getElementById('emailList');
+
+        function renderEmails(renderedEmails) {
+            emailList.innerHTML = '';
+            for(let email of renderedEmails) {
+                let li = document.createElement('li');
+                li.textContent = email;
+                emailList.appendChild(li);
+            }
+        }
+
+        function filterEmails() {
+            let filterValue = document.getElementById('emailFilter').value.toLowerCase();
+            let filteredEmails = emails.filter(email => email.toLowerCase().includes(filterValue));
+            console.log(filteredEmails);
+            renderEmails(filteredEmails);
+        }
+
+        renderEmails(emails);
+
+        </script>
+</body>
+
+</html>

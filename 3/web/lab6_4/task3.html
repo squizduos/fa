@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="buyerInfo">
+        <p id="buyer"></p>
+    </div>
+    <!-- <div id="orders"></div> -->
+
+    <script>
+
+
+        let user = {
+            id: 1,
+            name: 'Иван',
+            email: 'ivan@example.com',
+        };
+
+        let order = {
+            id: 101,
+            userId: 1,
+            restaurantId: 201,
+            items: [
+                { dishId: 1, quantity: 2 },
+                { dishId: 2, quantity: 1 }
+            ]
+        };
+
+        let restaurant = {
+            id: 201,
+            name: 'Пиццерия',
+            address: 'ул. Пушкина, 5'
+        };
+
+        function printOrderInfo(order, user, restaurant) {
+            if (order.userId === user.id && order.restaurantId === restaurant.id) {
+                document.getElementById("buyer").innerHTML = `Пользователь ${user.name} (${user.email}) сделал заказ в ресторане "${restaurant.name}" (${restaurant.address}).`;
+                
+                for (let item of order.items) {
+                    document.getElementById("buyer").innerHTML += `<p>Блюдо ID: ${item.dishId}, количество: ${item.quantity}</p>`;
+                }
+            }
+        }
+
+        printOrderInfo(order, user, restaurant);
+
+  
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="">
+        <table id="students" style="tbo">
+            <tr>
+                <th>Имя</th>
+                <th>Администратор</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table> 
+            
+    </div>
+    <script>
+
+        function User(name, isAdmin) {
+            this.name = name;
+            this.isAdmin = isAdmin;
+        }
+
+        let user1 = new User("Вася", false);
+        let user2 = new User("Петя", true);
+        let user3 = new User("Маша", false);
+
+        let table = document.getElementById("students").children.item(0);
+
+        table.children.item(1).children.item(0).innerHTML = user1.name;
+        table.children.item(1).children.item(1).innerHTML = user1.isAdmin;
+
+        table.children.item(2).children.item(0).innerHTML = user2.name;
+        table.children.item(2).children.item(1).innerHTML = user2.isAdmin;
+
+        table.children.item(3).children.item(0).innerHTML = user3.name;
+        table.children.item(3).children.item(1).innerHTML = user3.isAdmin;
+
+
+
+
+  
+    </script>
+</body>
+
+</html>

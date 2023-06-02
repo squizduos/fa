@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <script>
+        var myStudentID = 33;
+        document.writeln(`
+            <div>
+        `);
+        for (var i = 1; i <= myStudentID; i++) {
+            var isSimple = true;
+            for (var j = 2; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    isSimple = false;
+                }
+            }
+            if (isSimple) {
+                document.writeln(`
+            <p>${i}</p>
+        `);
+            }
+        }
+        document.writeln(`
+            </div>
+        `);
+    </script>
+</body>
+
+</html>

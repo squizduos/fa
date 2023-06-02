@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <script>
+        var simulationResult = [0, 0, 0];
+        for (var i = 0; i <= 100000; i++) {
+            var simulation = Math.round(Math.random()*3);
+            simulationResult[simulation] += 1;
+        }
+        alert("Красное выпадало " + simulationResult[0] + " раз.");
+        alert(simulationResult);
+    </script>
+</body>
+
+</html>

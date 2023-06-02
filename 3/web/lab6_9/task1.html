@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+    
+    <script>
+
+        let bankId = Symbol("account");
+        let workerId = Symbol("id");
+        let passport = Symbol("passport");
+
+        let bankClient = {
+            [bankId]: "1234567890",
+            name: "Иван Иванович",
+            balance: "500000"
+        };
+
+        let clinicWorker = {
+            [workerId]: 715,
+            name: "Петров Петр",
+            position: "Врач-терапевт",
+            clinic: "Клиника 'Здоровье'"
+        };
+
+        let citizen = {
+            [passport]: "4509 123456",
+            name: "Сергей Сергеевич",
+            placeOfBirth: "Москва, РФ"
+        };
+
+        document.writeln(`
+            <div>
+                <p>Клиент банка</p>
+                <p>${JSON.stringify(bankClient)}</p>
+                <hr>
+                <p>Врач</p>
+                <p>${JSON.stringify(clinicWorker)}</p>
+                <hr>
+                <p>Гражданин</p>
+                <p>${JSON.stringify(citizen)}</p>
+            </div>
+        `);        
+      
+    </script>
+</body>
+
+</html>

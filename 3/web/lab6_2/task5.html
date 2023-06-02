@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <script>
+        var myLastName = prompt("Введите вашу фамилию").toLowerCase();
+        var isPalyndrom = true;
+        for (var i = 0; i < myLastName.length / 2; i++) {
+            if (myLastName[i] != myLastName[myLastName.length - i - 1]) {
+                isPalyndrom = false;
+            }
+        }
+        document.writeln(`
+            <div>
+                <p>Фамилия "${myLastName}" является палиндромом: ${isPalyndrom}</p>
+            </div>
+        `);
+    </script>
+</body>
+
+</html>

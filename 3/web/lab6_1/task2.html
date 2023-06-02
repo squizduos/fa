@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <script>
+        var number1 = prompt("Введите первое число");
+        var number2 = prompt("Введите второе число");
+        document.writeln(`
+            <div>
+                <p>Некорректное поведение</p>
+                <p>${number1} + ${number2} = ${number1 + number2}</p>
+                <p>${number1} - ${number2} = ${number1 - number2}</p>
+                <p>${number1} * ${number2} = ${number1 * number2}</p>
+                <p>${number1} / ${number2} = ${number1 / number2}</p>
+            </div>
+        `);
+        number1 = parseInt(number1);
+        number2 = parseInt(number2);
+        document.writeln(`
+            <div>
+                <p>Корректное поведение :)</p>
+                <p>${number1} + ${number2} = ${number1 + number2}</p>
+                <p>${number1} - ${number2} = ${number1 - number2}</p>
+                <p>${number1} * ${number2} = ${number1 * number2}</p>
+                <p>${number1} / ${number2} = ${number1 / number2}</p>
+            </div>
+        `);
+    </script>
+</body>
+
+</html>

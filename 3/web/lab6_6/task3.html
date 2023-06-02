@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+
+        function generateArray() {
+            let arr = [];
+            for (var i = 0; i <= 50; i++) {
+                arr.push(Math.round(Math.random()*40 - 10))
+            }
+            return arr;
+        }
+
+        function squareLessThanNullInArray(arr) {
+            for (var i = 0; i <= 50; i++) {
+                if (arr[i] < 0) {
+                    arr[i] = arr[i] * arr[i];
+                }
+            }
+        }
+
+        let arr = generateArray();
+        document.write("<p>"+arr+"</p>");
+
+        squareLessThanNullInArray(arr);
+
+        document.write("<p>"+arr+"</p>");
+
+    </script>
+</body>
+
+</html>

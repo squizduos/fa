@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="buyerInfo">
+        <p id="buyer"></p>
+    </div>
+    <hr>
+    <div id="orders"></div>
+
+    </div>
+    <script>
+        let buyerInfo = {
+            firstName: "Семён",
+            lastName: "Бочкарёв",
+            age: 35,
+            address: "ул. Пушкина, дом Колотушкина",
+            email: "semen@example.com"
+        };
+
+        document.getElementById("buyer").innerHTML =
+        "Имя: " + buyerInfo.firstName + "<br>" +
+        "Фамилия: " + buyerInfo.lastName + "<br>" +
+        "Адрес: " + buyerInfo.address;
+  
+    </script>
+</body>
+
+</html>

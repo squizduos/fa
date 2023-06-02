@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+
+        let arr1 = [1969, 1971, 1995, 2007];
+        let arr2 = arr1.map(item => new Date().getFullYear() - item);
+
+        document.writeln(`
+            <div>
+                <p>Года рождения</p>
+                <p>${arr1}</p>
+                <p>Возраст</p>
+                <p>${arr2}</p>
+            </div>
+        `);            
+    </script>
+</body>
+
+</html>

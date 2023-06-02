@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <script>
+        var trueAnswers = 0;
+        var answer = "";
+        // Загадка 1
+        answer = prompt("Дважды два равно... (числом)");
+        if (answer === "4") {
+            alert("Верно!");
+            trueAnswers += 1;
+        } else {
+            alert("Неверно :(");
+        }
+        answer = prompt("Вы человек? Да или нет?");
+        if (answer.toLowerCase() === "да") {
+            alert("Верно!");
+            trueAnswers += 1;
+        } else {
+            alert("Неверно :(");
+        }        
+        document.writeln(`
+            <div>
+                <p>Вы прошли курс Answers 101</p>
+                <p>Ваш результат: ${trueAnswers} из 2.</p>
+            </div>
+        `);
+    </script>
+</body>
+
+</html>
