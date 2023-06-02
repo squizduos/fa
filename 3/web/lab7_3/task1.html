@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  
+    <div id="message"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Загрузка нашего компонента React. -->
+    <script type="text/babel">
+      function MyInfoComponent() {
+        const firstName = "Семён";
+        const lastName = "Бочкарёв";
+        const age = 27;
+
+        // Объект со стилями для JSX:
+        const styles = {
+          color: "red",
+          fontSize: "20px",
+          textAlign: "center",
+        };
+
+        return (
+          <div style={styles}>
+            Имя: {firstName}, Фамилия: {lastName}, Возраст: {age}
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <MyInfoComponent />,
+        document.getElementById('message')
+      );
+
+    </script>
+    
+</body>
+
+</html>

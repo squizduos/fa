@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Загрузка нашего компонента React. -->
+    <script type="text/babel">
+      class MyComponent extends React.Component {
+          constructor(props) {
+              super(props);
+              this.state = {
+                  name: props.name,
+                  age: props.age
+              };
+          }
+
+          handleClick = () => {
+              this.setState({
+                  age: this.state.age + 1 
+              });
+          }
+
+          getAgeDeclension = () => {
+            if (this.state.age % 10 == 1) {
+              return 'год';
+            } else if (this.state.age % 10 == 2 || this.state.age % 10 == 3 || this.state.age % 10 == 4) {
+              return 'года';
+            } else {
+              return 'лет';
+            }
+          }
+
+          render() {
+              return (
+                  <div>
+                      <p>Здравствуйте, {this.props.name}! Вам {this.state.age} {this.getAgeDeclension()}.</p>
+                      <button onClick={this.handleClick}>С днём рождения!</button>
+                  </div>
+              );
+          }
+      }
+
+      ReactDOM.render(<MyComponent name="Семён Бочкарёв" age={27} />, document.getElementById('root'));
+
+    </script>
+    
+</body>
+
+</html>

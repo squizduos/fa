@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="message"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Загрузка нашего компонента React. -->
+    <script type="text/babel">
+      function MyMessageComponent() {
+        return (
+          <div>Это мое сообщение!</div>
+        );
+      }
+    
+      ReactDOM.render(
+        <MyMessageComponent />,
+        document.getElementById('message')
+      );
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Загрузка нашего компонента React. -->
+    <script type="text/babel">
+      class SearchBar extends React.Component {
+        constructor(props) {
+          super(props);
+          this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+        }
+        
+        handleFilterTextChange(e) {
+          this.props.onFilterTextChange(e.target.value);
+        }
+        
+        render() {
+          return (
+            <input 
+              type="text" 
+              placeholder="Поиск..." 
+              value={this.props.filterText} 
+              onChange={this.handleFilterTextChange}
+            />
+          );
+        }
+      }
+
+      class FilterableList extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            filterText: ''
+          };
+          
+          this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+        }
+        
+        handleFilterTextChange(filterText) {
+          this.setState({
+            filterText: filterText
+          });
+        }
+        
+        render() {
+          const list = this.props.items.filter(item => item.includes(this.state.filterText));
+
+          return (
+            <div>
+              <SearchBar 
+                filterText={this.state.filterText}
+                onFilterTextChange={this.handleFilterTextChange} 
+              />
+              <ul>
+                {list.map(item => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          );
+        }
+      }
+
+      const items = ['squizduos@gmail.com', 'barbaleska@yandex.ru', 'arkhivach@mail.ru', 'sqds@gdrive.top', 'sqds@cock.li'];
+
+      ReactDOM.render(
+        <FilterableList items={items} />,
+        document.getElementById('root')
+      );
+
+    </script>
+    
+</body>
+
+</html>

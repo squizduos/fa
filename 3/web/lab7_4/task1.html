@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  
+    <div id="hello_world_functional"></div>
+    <hr>
+    <div id="hello_world_es6"></div>
+    <hr>
+    <div id="hello_world_arrow"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Загрузка нашего компонента React. -->
+    <script type="text/babel">
+      function HelloWorldFunctionalComponent() {
+        return <h1>Привет, мир!</h1>;
+      }
+
+      class HelloWorldES6Class extends React.Component {
+        render() {
+          return <h1>Привет, мир!</h1>;
+        }
+      }
+
+      const HelloWorldArrowComponent = () => <h1>Привет, мир!</h1>;
+
+      ReactDOM.render(
+        <HelloWorldFunctionalComponent />,
+        document.getElementById('hello_world_functional')
+      );
+
+      ReactDOM.render(
+        <HelloWorldES6Class />,
+        document.getElementById('hello_world_es6')
+      );
+
+      ReactDOM.render(
+        <HelloWorldArrowComponent />,
+        document.getElementById('hello_world_arrow')
+      );
+
+    </script>
+    
+</body>
+
+</html>

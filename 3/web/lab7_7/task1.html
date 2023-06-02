@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Загрузка нашего компонента React. -->
+    <script type="text/babel">
+      class LifecycleExample extends React.Component {
+        constructor(props) {
+          super(props);
+          console.log('constructor');
+          this.state = { count: 0 };
+        }
+
+        componentDidMount() {
+          alert('componentDidMount');
+        }
+
+        shouldComponentUpdate(nextProps, nextState) {
+          alert('shouldComponentUpdate');
+          return true;
+        }
+
+        getSnapshotBeforeUpdate(prevProps, prevState) {
+          alert('getSnapshotBeforeUpdate');
+          return null;
+        }
+
+        componentDidUpdate(prevProps, prevState, snapshot) {
+          alert('componentDidUpdate');
+        }
+
+        handleClick = () => {
+          this.setState((state) => ({ count: state.count + 1 }));
+        }
+
+        render() {
+          alert('render');
+          return (
+            <button onClick={this.handleClick}>
+              Нажатий: {this.state.count}
+            </button>
+          );
+        }
+      }
+
+      ReactDOM.render(<LifecycleExample />, document.getElementById('root'));
+    </script>
+    
+</body>
+
+</html>
