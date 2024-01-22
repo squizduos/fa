@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    
+        <style>
+
+        </style>
+    </head>
+<body>
+  <div id="root"></div>
+</body>
+<!-- This setup is not suitable for production. -->
+<!-- Only use it in development! -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+
+function Logo() {
+    return (
+        <a href="/" className="d-flex align-items-center link-body-emphasis text-decoration-none">
+            <span className="fs-4">Логотип</span>
+        </a>
+    )
+}
+
+function Nav() {
+  return (
+    <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <ul className="nav justify-content-end">
+            <li className="nav-item">
+                <a className="nav-link" href="#">
+                О нас
+                </a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="#">
+                Услуги
+                </a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="#">
+                Контакты
+                </a>
+            </li>
+            <li className="nav-item">
+                <a className="btn btn-danger" aria-current="page">
+                Контакты
+                </a>
+            </li>
+        </ul>
+    </nav>
+  );
+}
+
+function PageTitle() {
+    return (
+        <div className="pricing-header p-3 pb-md-4 mx-auto">
+            <h1 className="display-6 fw-normal text-body-emphasis">
+                Заголовок. Напишите привлекательный оффер
+            </h1>
+            <p className="fs-5 text-body-secondary">
+                Добавьте интересные подробности о вашей компании в одну строку.
+            </p>
+        </div>
+
+    )
+}
+
+function Header() {
+    return (
+        <header>
+            <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                <Logo />
+                <Nav />
+            </div>
+        </header>
+    )
+}
+
+function Card() {
+    return (
+        <div className="card me-auto" style={{ width: "18rem" }}>
+            <img src="300x300.jpg" className="card-img-top" alt="..." />
+            <div className="card-body">
+                <h5 className="card-title">Заголовок</h5>
+                <p className="card-text">
+                    Здесь будут подробности об услуге. Или нет.
+                </p>
+                <a href="#" className="btn btn-danger">Подробнее</a>
+            </div>
+        </div>
+
+    )
+}
+
+let App = function BootstrapDemo() {
+  return (
+    <div>
+        <Header />
+        <PageTitle />
+        <div className="row row-cols-1 row-cols-md-3 m-3 mb-3 text-center">
+            <Card />
+            <Card />
+            <Card />
+        </div>
+    </div>
+  );
+}
+
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+</script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+img { margin: 0 10px 10px 0; height: 200px; }
+
+</style>
+</html>

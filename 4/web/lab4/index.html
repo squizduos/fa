@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    
+        <style>
+
+        </style>
+    </head>
+<body>
+  <div id="root"></div>
+</body>
+<!-- This setup is not suitable for production. -->
+<!-- Only use it in development! -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+export const categories = [
+    {
+        name: "Книги",
+        link: "https://www.google.com",
+    },
+    {
+        name: "Статьи",
+        link: "https://www.yandex.ru",
+    },  
+    {
+        name: "Обзоры книг",
+        link: "https://www.baidu.com",
+    },     
+    {
+        name: "Отрывки из книг",
+        link: "https://www.rambler.ru",
+    },   
+    {
+        name: "Тесты",
+        link: "https://www.mail.ru",
+    },   
+]
+
+export const slides = [
+    {
+        image_link: "https://i.imgur.com/o8toGb.png",
+        image_title: "example 1"
+    },
+    {
+        image_link: "https://i.imgur.com/17Jvbb.png",
+        image_title: "example 2"
+    },
+    {
+        image_link: "https://i.imgur.com/XAv9gb.png",
+        image_title: "example 3"
+    },
+    {
+        image_link: "https://i.imgur.com/Yw2V4b.png",
+        image_title: "example 4"
+    },
+    {
+        image_link: "https://i.imgur.com/uTcH3b.png",
+        image_title: "example 5"
+    },
+]
+
+export const books = [
+    {
+        cover: "https://bombora.ru/upload/resize_cache/iblock/5c8/zrnpzej6lhhgi9g7yy1ny14rn070zr1t/300_408_1/cover3d.jpg",
+        title: "В начале было кофе. Лингвомифы, речевые «ошибки» и другие поводы поломать копья в спорах о русском языке",
+        url: "https://bombora.ru/book/88813/",
+        price: 844
+    },
+    {
+        cover: "https://bombora.ru/upload/resize_cache/iblock/c1e/gfx5nttyr8v6frnyz4oiqjfu0jtwihk3/300_408_1/cover3d.jpg",
+        title: "Half-Life. Как Valve создала культовый шутер от первого лица",
+        url: "https://bombora.ru/book/88817/",
+        price: 844
+    },
+    {
+        cover: "https://bombora.ru/upload/resize_cache/iblock/ce8/sh1rnw4a924uy4qgbaq76m5b3p24icxo/300_408_1/cover3d.jpg",
+        title: "Локальный бизнес. Как найти удачное место и превратить его в кофейню, салон красоты, винотеку или другое дело",
+        url: "https://bombora.ru/book/88817/",
+        price: 688
+    },
+]
+
+
+function Logo() {
+    return (
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center text-center pb-3 mb-4 border-bottom">
+            <a href="/" className="d-flex align-items-center text-center link-body-emphasis text-decoration-none">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={40}
+                    height={32}
+                    className="me-2"
+                    viewBox="0 0 118 94"
+                    role="img"
+                    >
+                    <title>Bootstrap</title>
+                    <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                        fill="currentColor"
+                    />
+                </svg>
+                <span className="fs-4">Книжный магазин</span>
+            </a>
+        </div>
+    )
+}
+
+function NavElement({ name = "No name specified", link = "#", key = "No name specified" }) {
+    return (
+        <li className="nav-item">
+            <a className="nav-link" href={link}>
+                {name}
+            </a>
+        </li>
+    )
+}
+
+function Nav() {
+  const categoriesRendered = categories.map(category => <NavElement name={category.name} link={category.link} key={category.name} />)
+  return (
+    <div className="d-flex flex-column flex-md-row align-items-center text-center justify-content-center pb-3 mb-4 border-bottom">
+        <nav className="d-inline-flex mt-2 mt-md-0">
+            <ul className="nav justify-content-center">
+                {categoriesRendered}
+
+                <li className="nav-item">
+                    <a className="btn btn-danger" aria-current="page">
+                    Всё
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+  );
+}
+
+function CarouselElement ({ image_link = "", image_title = "", active = false, key=""}) {
+    let active_element = active ? "active": "";
+    let element = (
+        <div className="carousel-item active">
+            <img src={image_link} className="d-block w-100" alt={image_title} />
+        </div>
+    )
+    return element;
+}
+
+function Carousel() {
+    const slidesRendered = slides.map((slide, index) => <CarouselElement image_link={slide.image_link} image_title={slide.image_title} key={slide.image_link} active={index == 0 ? true : false} />)
+    console.log(slidesRendered);
+    return (
+        <div>
+        <div id="carouselExample" className="carousel slide">
+            {slidesRendered}
+            <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+            >
+                <span className="carousel-control-prev-icon" aria-hidden="true" />
+                <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+            >
+                <span className="carousel-control-next-icon" aria-hidden="true" />
+                <span className="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+    )
+}
+
+function Header() {
+    return (
+        <header>
+            <Logo />
+            <Nav />
+        </header>
+    )
+}
+
+function Card({ key, cover = "", title = "Нет заголовка", url = "#", price = 0 }) {
+    return (
+        <div className="card me-auto" style={{ width: "18rem" }}>
+            <img src={cover} className="card-img-top" alt="..." />
+            <div className="card-body">
+                <p className="card-text">
+                    {title}
+                </p>
+                <a href={url} className="btn btn-danger">{price} руб.</a>
+            </div>
+        </div>
+
+    )
+}
+
+let App = function BootstrapDemo() {
+  let cardsRendered = books.map(book => <Card key={book.url} cover={book.cover} title={book.title} url={book.url} price={book.price} />)
+  return (
+    <div>
+        <Header />
+        <div className="row row-cols-1 row-cols-md-3 m-3 mb-3 text-center">
+            {cardsRendered}
+        </div>
+    </div>
+  );
+}
+
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+img { margin: 0 10px 10px 0; height: 200px; }
+
+</style>
+</html>
